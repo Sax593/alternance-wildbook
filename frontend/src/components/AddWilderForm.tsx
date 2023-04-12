@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 
 export default function AddWilderForm() {
   const [wilderName, setName] = useState("");
@@ -8,10 +7,7 @@ export default function AddWilderForm() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/wilder", {
-          name: wilderName,
-          city: city,
-        });
+  
       }}>
       <h3>Add Wilder</h3>
       <label>Name </label>

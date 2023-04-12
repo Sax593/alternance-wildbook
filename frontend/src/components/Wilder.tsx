@@ -1,18 +1,15 @@
 import axios from "axios";
 import blank_profile from "../assets/profile.png";
 import Skill, { SkillProps } from "./Skill";
-import { GradeApi } from "../App";
 
 export interface WilderProps {
+  id: string;
   name: string;
-  id: number;
   skills: SkillProps[];
-  city: string;
-  grades: GradeApi[];
 }
 
 export default function Wilder({ id, name, skills }: WilderProps) {
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     axios.delete("http://localhost:5000/api/wilder/" + id);
   };
   return (
