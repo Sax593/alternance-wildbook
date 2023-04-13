@@ -12,7 +12,7 @@ import { Field, ObjectType } from "type-graphql";
 @ObjectType()
 @Entity()
 export class Grade {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   wilderId: string;
 
   @PrimaryColumn()

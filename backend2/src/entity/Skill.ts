@@ -6,7 +6,7 @@ import { Field, ObjectType } from "type-graphql";
 @Entity()
 export class Skill {
   @Field()
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Field()
