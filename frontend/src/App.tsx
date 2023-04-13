@@ -1,6 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
 import Wilder, { WilderProps } from "./components/Wilder";
 import "./App.css";
+import AddWilderForm from "./components/AddWilderForm";
+import AddGradeForm from "./components/AddGradeForm/AddGradeForm";
 
 export interface SkillApi {
   id: number;
@@ -16,9 +18,10 @@ export interface WilderApi {
   grades: GradeApi[];
 }
 
-const GET_WILDERS = gql`
+export const GET_WILDERS = gql`
   query GetWilders {
     wilders {
+      id
       name
       grades {
         grade
@@ -59,7 +62,6 @@ export default function App() {
       </header>
       <main className="container">
         <h2>Wilders</h2>
-        <div className="addform"></div>
         <section className="card-row">
           {wilders.map((element) => {
             return (
@@ -72,10 +74,14 @@ export default function App() {
             );
           })}
         </section>
+        <div className="addForm">
+          <AddWilderForm/>
+          <AddGradeForm />
+        </div>
       </main>
       <footer>
         <div className="container">
-          <p>&copy; 2022 Wild Code School</p>
+          <p>&copy; 2023 Wild Code School</p>
         </div>
       </footer>
     </div>

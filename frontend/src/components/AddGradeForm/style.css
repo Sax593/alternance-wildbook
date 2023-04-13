@@ -1,0 +1,13 @@
+.gradeFormSection{
+    display: flex;
+    flex-direction: column;
+}
+
+.gradeForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.gradeLabel{
+    padding: 0.5rem 0;
+}

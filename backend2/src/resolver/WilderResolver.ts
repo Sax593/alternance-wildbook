@@ -16,8 +16,15 @@ class WilderResolver {
   async addWilder(@Arg("name") name: string): Promise<Wilder> {
     const createWilder = await dataSource
       .getRepository(Wilder)
-      .save({ name: "" });
+      .save({ name });
     return createWilder;
+  }
+
+  @Mutation(()=> String)
+  async deleteWilder(@Arg("id") id: string): Promise<string>{
+    const deleteUser = await dataSource.getRepository(Wilder).delete({id});
+    console.log(deleteUser);
+    return "wilder deleted"; 
   }
 }
 
